@@ -2,7 +2,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
-import 'package:c25k_app/models/interval.dart';
+import 'package:c25k_app/models/interval.dart' as interval_model;
 
 class WorkoutScreen extends StatefulWidget {
   final Workout workout;
@@ -14,7 +14,7 @@ class WorkoutScreen extends StatefulWidget {
 }
 
 class _WorkoutScreenState extends State<WorkoutScreen> {
-  late List<Interval> intervals;
+  late List<interval_model.Interval> intervals;
   late int currentIntervalIndex;
   late int remainingSeconds;
   late Timer? timer;
