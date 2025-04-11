@@ -1,5 +1,5 @@
-// screens/workout_screen.dart
 import 'dart:async';
+import 'package:c25k_app/services/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
 import 'package:c25k_app/models/interval.dart' as interval_model;
@@ -7,7 +7,7 @@ import 'package:c25k_app/models/interval.dart' as interval_model;
 class WorkoutScreen extends StatefulWidget {
   final Workout workout;
 
-  const WorkoutScreen({Key? key, required this.workout}) : super(key: key);
+  const WorkoutScreen({super.key, required this.workout});
 
   @override
   _WorkoutScreenState createState() => _WorkoutScreenState();
@@ -20,6 +20,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   late Timer? timer;
   bool isWorkoutActive = false;
   bool isWorkoutCompleted = false;
+  final NotificationService _notificationService = NotificationService();
 
   @override
   void initState() {
@@ -27,7 +28,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     intervals = widget.workout.intervals;
     currentIntervalIndex = 0;
     remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
-    timer = null;
+    timer = _initiateTimer();
   }
 
   @override
@@ -41,24 +42,11 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       isWorkoutActive = true;
     });
 
-    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        if (remainingSeconds > 0) {
-          remainingSeconds--;
-        } else {
-          // Move to next interval
-          if (currentIntervalIndex < intervals.length - 1) {
-            currentIntervalIndex++;
-            remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
-          } else {
-            // Workout complete
-            timer.cancel();
-            isWorkoutActive = false;
-            isWorkoutCompleted = true;
-          }
-        }
-      });
-    });
+    // Announce first activity when starting workout
+    if (currentIntervalIndex == 0 &&
+        remainingSeconds == intervals[0].totalSeconds) {
+      _notificationService.notifyActivityChange(intervals[0].activityType);
+    }
   }
 
   void pauseWorkout() {
@@ -226,5 +214,39 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         ),
       ),
     );
+  }
+
+  Timer? _initiateTimer() {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() {
+        if (remainingSeconds > 0) {
+          remainingSeconds--;
+
+          // Optional: Add countdown notifications
+          if (remainingSeconds == 3) {
+            _notificationService.notifyCountdown(3);
+          }
+        } else {
+          // Move to next interval
+          if (currentIntervalIndex < intervals.length - 1) {
+            currentIntervalIndex++;
+            final newInterval = intervals[currentIntervalIndex];
+            remainingSeconds = newInterval.totalSeconds;
+
+            // Notify user of specific activity change
+            _notificationService.notifyActivityChange(newInterval.activityType);
+          } else {
+            // Workout complete
+            timer.cancel();
+            isWorkoutActive = false;
+            isWorkoutCompleted = true;
+
+            // Notify user that workout is complete
+            _notificationService.notifyWorkoutComplete();
+          }
+        }
+      });
+    });
+    return timer;
   }
 }
