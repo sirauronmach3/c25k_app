@@ -1,8 +1,9 @@
 // screens/workout_list_screen.dart
+import 'package:c25k_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
-import '../models/workout.dart';
-import '../services/workout_service.dart';
-import 'workout_screen.dart';
+import 'package:c25k_app/models/workout.dart';
+import 'package:c25k_app/services/workout_service.dart';
+import 'package:c25k_app/screens/workout_screen.dart';
 
 class WorkoutListScreen extends StatelessWidget {
   final int weekNumber;
@@ -15,7 +16,7 @@ class WorkoutListScreen extends StatelessWidget {
     final WorkoutService workoutService = WorkoutService();
 
     return Scaffold(
-      appBar: AppBar(title: Text('Week $weekNumber Workouts')),
+      appBar: CustomAppBar(title: 'Week $weekNumber Workouts'),
       body: FutureBuilder<List<Workout>>(
         future: workoutService.getWorkoutsByWeek(weekNumber),
         builder: (context, snapshot) {
