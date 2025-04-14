@@ -1,10 +1,14 @@
-// screens/workout_list_screen.dart
 import 'package:c25k_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
 import 'package:c25k_app/services/workout_service.dart';
 import 'package:c25k_app/screens/workout_screen.dart';
 
+/// WorkoutListScreen. Display a list of workouts for a given week.
+/// Tapping a workout navigates to the WorkoutScreen.
+///
+/// This screen uses a FutureBuilder to load the workouts from the WorkoutService.
+/// Depends on the workouts.json file to be present in the assets directory.
 class WorkoutListScreen extends StatelessWidget {
   final int weekNumber;
 
