@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:c25k_app/services/notification_service.dart';
+import 'package:c25k_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
 import 'package:c25k_app/models/interval.dart' as interval_model;
@@ -28,7 +29,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     intervals = widget.workout.intervals;
     currentIntervalIndex = 0;
     remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
-    timer = _initiateTimer();
+    timer = null; // Don't initialize timer automatically
   }
 
   @override
@@ -41,6 +42,9 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     setState(() {
       isWorkoutActive = true;
     });
+
+    // Initialize timer when starting workout
+    timer = _initiateTimer();
 
     // Announce first activity when starting workout
     if (currentIntervalIndex == 0 &&
@@ -64,6 +68,27 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       isWorkoutActive = false;
       isWorkoutCompleted = false;
     });
+  }
+
+  void skipToNextInterval() {
+    if (currentIntervalIndex < intervals.length - 1) {
+      setState(() {
+        currentIntervalIndex++;
+        remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
+        _notificationService.notifyActivityChange(
+          intervals[currentIntervalIndex].activityType,
+        );
+      });
+    }
+  }
+
+  void endWorkout() {
+    timer?.cancel();
+    setState(() {
+      isWorkoutActive = false;
+      isWorkoutCompleted = true;
+    });
+    _notificationService.notifyWorkoutComplete();
   }
 
   Color _getColorForActivityType(String activityType) {
@@ -110,7 +135,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     );
 
     return Scaffold(
-      appBar: AppBar(title: Text(widget.workout.title)),
+      appBar: CustomAppBar(title: widget.workout.title),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -172,6 +197,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                                 remainingSeconds == intervals[0].totalSeconds
                             ? 'Start Workout'
                             : 'Resume',
+                        style: TextStyle(color: Colors.black),
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green,
@@ -185,7 +211,10 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                     ElevatedButton.icon(
                       onPressed: pauseWorkout,
                       icon: const Icon(Icons.pause),
-                      label: const Text('Pause'),
+                      label: const Text(
+                        'Pause',
+                        style: TextStyle(color: Colors.black),
+                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         padding: const EdgeInsets.symmetric(
@@ -198,12 +227,55 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                   ElevatedButton.icon(
                     onPressed: resetWorkout,
                     icon: const Icon(Icons.refresh),
-                    label: const Text('Reset'),
+                    label: const Text(
+                      'Reset',
+                      style: TextStyle(color: Colors.black),
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 24,
                         vertical: 12,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed:
+                        currentIntervalIndex < intervals.length - 1
+                            ? skipToNextInterval
+                            : null,
+                    icon: const Icon(Icons.skip_next),
+                    label: const Text(
+                      'Skip Interval',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 10,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  ElevatedButton.icon(
+                    onPressed: endWorkout,
+                    icon: const Icon(Icons.stop),
+                    label: const Text(
+                      'End Workout',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 10,
                       ),
                     ),
                   ),
