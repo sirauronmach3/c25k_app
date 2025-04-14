@@ -1,9 +1,16 @@
 // screens/home_screen.dart
+import 'package:c25k_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
-import '../models/workout.dart';
-import '../services/workout_service.dart';
-import 'workout_list_screen.dart';
+import 'package:c25k_app/models/workout.dart';
+import 'package:c25k_app/services/workout_service.dart';
+import 'package:c25k_app/screens/workout_list_screen.dart';
 
+/// Homesscreen. Display a list of weeks.
+/// Each week is a card that can be tapped to view the workouts for that week.
+/// Tapping navigates to the WorkoutListScreen.
+///
+/// This screen uses a FutureBuilder to load the workouts from the WorkoutService.
+/// Depends on the workouts.json file to be present in the assets directory.
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -12,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     final WorkoutService workoutService = WorkoutService();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('C25K Runner')),
+      appBar: CustomAppBar(title: "Select a Week"),
       body: FutureBuilder<List<Workout>>(
         future: workoutService.loadWorkouts(),
         builder: (context, snapshot) {
