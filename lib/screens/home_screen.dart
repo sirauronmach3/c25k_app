@@ -1,11 +1,10 @@
-// screens/home_screen.dart
 import 'package:c25k_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
 import 'package:c25k_app/services/workout_service.dart';
 import 'package:c25k_app/screens/workout_list_screen.dart';
 
-/// Homesscreen. Display a list of weeks.
+/// Homescreen. Display a list of weeks.
 /// Each week is a card that can be tapped to view the workouts for that week.
 /// Tapping navigates to the WorkoutListScreen.
 ///
