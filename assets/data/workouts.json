@@ -1,0 +1,1288 @@
+{
+    "weeks": [
+        {
+            "weekNumber": 1,
+            "workouts": [
+                {
+                    "title": "Week 1, Workout 1",
+                    "description": "5-minute warmup, then alternate 60 seconds of jogging and 90 seconds of walking for 20 minutes",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 1, Workout 2",
+                    "description": "5-minute warmup, then alternate 60 seconds of jogging and 90 seconds of walking for 20 minutes",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 1, Workout 3",
+                    "description": "5-minute warmup, then alternate 60 seconds of jogging and 90 seconds of walking for 20 minutes",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "weekNumber": 2,
+            "workouts": [
+                {
+                    "title": "Week 2, Workout 1",
+                    "description": "5-minute warmup, then alternate 90 seconds of jogging and 2 minutes of walking for 20 minutes",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 2, Workout 2",
+                    "description": "5-minute warmup, then alternate 90 seconds of jogging and 2 minutes of walking for 20 minutes",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 2, Workout 3",
+                    "description": "5-minute warmup, then alternate 90 seconds of jogging and 2 minutes of walking for 20 minutes",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "weekNumber": 3,
+            "workouts": [
+                {
+                    "title": "Week 3, Workout 1",
+                    "description": "5-minute warmup, then alternate 90 seconds of jogging, 90 seconds of walking, 3 minutes of jogging, and 3 minutes of walking for 2 repetitions",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 3, Workout 2",
+                    "description": "5-minute warmup, then alternate 90 seconds of jogging, 90 seconds of walking, 3 minutes of jogging, and 3 minutes of walking for 2 repetitions",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 3, Workout 3",
+                    "description": "5-minute warmup, then alternate 90 seconds of jogging, 90 seconds of walking, 3 minutes of jogging, and 3 minutes of walking for 2 repetitions",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "weekNumber": 4,
+            "workouts": [
+                {
+                    "title": "Week 4, Workout 1",
+                    "description": "5-minute warmup, then 3 minutes of jogging, 90 seconds of walking, 5 minutes of jogging, 2.5 minutes of walking, 3 minutes of jogging, 90 seconds of walking, 5 minutes of jogging",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 4, Workout 2",
+                    "description": "5-minute warmup, then 3 minutes of jogging, 90 seconds of walking, 5 minutes of jogging, 2.5 minutes of walking, 3 minutes of jogging, 90 seconds of walking, 5 minutes of jogging",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 4, Workout 3",
+                    "description": "5-minute warmup, then 3 minutes of jogging, 90 seconds of walking, 5 minutes of jogging, 2.5 minutes of walking, 3 minutes of jogging, 90 seconds of walking, 5 minutes of jogging",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 2,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 1,
+                            "durationSeconds": 30
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "weekNumber": 5,
+            "workouts": [
+                {
+                    "title": "Week 5, Workout 1",
+                    "description": "5-minute warmup, then 5 minutes of jogging, 3 minutes of walking, 5 minutes of jogging, 3 minutes of walking, 5 minutes of jogging",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 5, Workout 2",
+                    "description": "5-minute warmup, then 8 minutes of jogging, 5 minutes of walking, 8 minutes of jogging",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 8,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 8,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 5, Workout 3",
+                    "description": "5-minute warmup, then 20 minutes of jogging with no walking intervals",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 20,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "weekNumber": 6,
+            "workouts": [
+                {
+                    "title": "Week 6, Workout 1",
+                    "description": "5-minute warmup, then 5 minutes of jogging, 3 minutes of walking, 8 minutes of jogging, 3 minutes of walking, 5 minutes of jogging",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 8,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 6, Workout 2",
+                    "description": "5-minute warmup, then 10 minutes of jogging, 3 minutes of walking, 10 minutes of jogging",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 10,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "walk",
+                            "durationMinutes": 3,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 10,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 6, Workout 3",
+                    "description": "5-minute warmup, then 25 minutes of jogging with no walking intervals",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 25,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "weekNumber": 7,
+            "workouts": [
+                {
+                    "title": "Week 7, Workout 1",
+                    "description": "5-minute warmup, then 25 minutes of jogging with no walking intervals",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 25,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 7, Workout 2",
+                    "description": "5-minute warmup, then 25 minutes of jogging with no walking intervals",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 25,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 7, Workout 3",
+                    "description": "5-minute warmup, then 25 minutes of jogging with no walking intervals",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 25,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "weekNumber": 8,
+            "workouts": [
+                {
+                    "title": "Week 8, Workout 1",
+                    "description": "5-minute warmup, then 28 minutes of jogging with no walking intervals",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 28,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 8, Workout 2",
+                    "description": "5-minute warmup, then 28 minutes of jogging with no walking intervals",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 28,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 8, Workout 3",
+                    "description": "5-minute warmup, then 28 minutes of jogging with no walking intervals",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 28,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "weekNumber": 9,
+            "workouts": [
+                {
+                    "title": "Week 9, Workout 1",
+                    "description": "5-minute warmup, then 30 minutes of jogging with no walking intervals",
+                    "dayNumber": 1,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 30,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 9, Workout 2",
+                    "description": "5-minute warmup, then 30 minutes of jogging with no walking intervals",
+                    "dayNumber": 2,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 30,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Week 9, Workout 3",
+                    "description": "5-minute warmup, then 30 minutes of jogging with no walking intervals",
+                    "dayNumber": 3,
+                    "intervals": [
+                        {
+                            "activityType": "warmup",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "run",
+                            "durationMinutes": 30,
+                            "durationSeconds": 0
+                        },
+                        {
+                            "activityType": "cooldown",
+                            "durationMinutes": 5,
+                            "durationSeconds": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
