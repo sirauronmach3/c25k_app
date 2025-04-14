@@ -16,6 +16,7 @@ class C25KApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: Brightness.dark,
       ),
       home: const HomeScreen(),
     );
