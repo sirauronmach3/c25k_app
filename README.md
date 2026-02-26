@@ -1,16 +1,9 @@
 # c25k_app
 
-A new Flutter project.
+There isn't much fancy about this. It's a simple couch to 5k app using the standard recommendations for run duration.
 
-## Getting Started
+Currently it won't correctly track time correctly when it is in the background or the screen is off.
 
-This project is a starting point for a Flutter application.
+Does not support tracking previous runs.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Only runs locally, does not retain any data or transmit it elsewhere.
