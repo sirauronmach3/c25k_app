@@ -4,6 +4,7 @@ import 'package:c25k_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
 import 'package:c25k_app/models/interval.dart' as interval_model;
+import 'package:flutter_background/flutter_background.dart';
 
 class WorkoutScreen extends StatefulWidget {
   final Workout workout;
