@@ -2,7 +2,8 @@
 
 There isn't much fancy about this. It's a simple couch to 5k app using the standard recommendations for run duration.
 
-Currently it won't correctly track time correctly when it is in the background or the screen is off.
+Depends on flutter_background to keep timer working when navigating to different applications or while screen is off.
+Creates notifications for background processes.
 
 Does not support tracking previous runs.
 

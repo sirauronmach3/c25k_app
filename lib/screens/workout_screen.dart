@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
 import 'package:c25k_app/models/interval.dart' as interval_model;
 import 'package:wakelock_plus/wakelock_plus.dart';
+import 'package:flutter_background/flutter_background.dart';
 
 class WorkoutScreen extends StatefulWidget {
   final Workout workout;
@@ -20,6 +21,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   late int currentIntervalIndex;
   late int remainingSeconds;
   late Timer? timer;
+  late bool backgroundExecutionEnabled;
   bool isWorkoutActive = false;
   bool isWorkoutCompleted = false;
   final NotificationService _notificationService = NotificationService();
@@ -32,12 +34,28 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     currentIntervalIndex = 0;
     remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
     timer = null; // Don't initialize timer automatically
+    _enableBackgroundExecution();
+  }
+
+  Future<bool> _enableBackgroundExecution() async {
+    backgroundExecutionEnabled =
+        await FlutterBackground.enableBackgroundExecution();
+    return backgroundExecutionEnabled;
+  }
+
+  Future<bool> _disableBackgroundExecution() async {
+    if (backgroundExecutionEnabled) {
+      return await FlutterBackground.disableBackgroundExecution();
+    } else {
+      return true;
+    }
   }
 
   @override
   void dispose() {
     timer?.cancel();
     WakelockPlus.disable();
+    _disableBackgroundExecution();
     super.dispose();
   }
 
