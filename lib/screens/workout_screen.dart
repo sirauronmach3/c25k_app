@@ -4,6 +4,7 @@ import 'package:c25k_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
 import 'package:c25k_app/models/interval.dart' as interval_model;
+import 'package:wakelock_plus/wakelock_plus.dart';
 import 'package:flutter_background/flutter_background.dart';
 
 class WorkoutScreen extends StatefulWidget {
@@ -28,6 +29,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   @override
   void initState() {
     super.initState();
+    WakelockPlus.enable();
     intervals = widget.workout.intervals;
     currentIntervalIndex = 0;
     remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
@@ -52,6 +54,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   @override
   void dispose() {
     timer?.cancel();
+    WakelockPlus.disable();
     _disableBackgroundExecution();
     super.dispose();
   }
