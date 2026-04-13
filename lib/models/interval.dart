@@ -1,3 +1,7 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
 class Interval {
   final String activityType; // "walk", "run", "warmup", "cooldown"
   final int durationMinutes;
@@ -25,5 +29,35 @@ class Interval {
       'durationMinutes': durationMinutes,
       'durationSeconds': durationSeconds,
     };
+  }
+
+  Color getColorForActivityType() {
+    switch (this.activityType) {
+      case 'warmup':
+        return Colors.yellow;
+      case 'run':
+        return Colors.green;
+      case 'walk':
+        return Colors.blue;
+      case 'cooldown':
+        return Colors.purple;
+      default:
+        return Colors.grey;
+    }
+  }
+
+  String getActivityLabel() {
+    switch (this.activityType) {
+      case 'warmup':
+        return 'Warm Up';
+      case 'run':
+        return 'Run';
+      case 'walk':
+        return 'Walk';
+      case 'cooldown':
+        return 'Cool Down';
+      default:
+        return this.activityType;
+    }
   }
 }

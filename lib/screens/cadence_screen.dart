@@ -1,4 +1,8 @@
+import 'dart:async';
+
+import 'package:c25k_app/services/notification_service.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 /// Screen for setting a cadence of run and walk intervals.
 /// Allows selecting the run and walk intervals seperately, and also optionally the total duration of the workout.
@@ -18,8 +22,42 @@ class CadenceScreen extends StatefulWidget {
 }
 
 class _CadenceScreenState extends State<CadenceScreen> {
+  int runInterval = 60; // default run interval in seconds
+  int walkInterval = 30; // default walk interval in seconds
+  bool isRunning = false;
+  late Timer? timer;
+  final NotificationService _notificationService = NotificationService();
+
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: Text('Cadence Selector')),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Text("Run time $runInterval seconds"),
+                SizedBox(width: 20),
+                Text("Walk time $walkInterval seconds"),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(children: [Text("Placeholder for cadence display")]),
+            SizedBox(height: 20),
+            Row(children: [Text("Placeholder for cadence selection")]),
+            Row(
+              children: [
+                Text("Run time selection"),
+                SizedBox(width: 20),
+                Text("Walk time selection"),
+              ],
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(onPressed: () {}, child: Text("Start Workout")),
+          ],
+        ),
+      ),
+    );
   }
 }
