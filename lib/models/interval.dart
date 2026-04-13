@@ -9,8 +9,8 @@ class Interval {
 
   const Interval({
     required this.activityType,
-    this.durationMinutes = 0,
-    this.durationSeconds = 0,
+    required this.durationMinutes,
+    required this.durationSeconds,
   });
 
   int get totalSeconds => (durationMinutes * 60) + durationSeconds;
@@ -70,3 +70,5 @@ class Interval {
     return '${getActivityLabel()}, ${formatDuration()}';
   }
 }
+
+enum ActivityType { warmup, run, walk, cooldown }
