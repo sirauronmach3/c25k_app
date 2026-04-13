@@ -60,4 +60,13 @@ class Interval {
         return this.activityType;
     }
   }
+
+  String formatDuration() {
+    return '$durationMinutes:${durationSeconds.toString().padLeft(2, '0')}';
+  }
+
+  @override
+  String toString() {
+    return '${getActivityLabel()}, ${formatDuration()}';
+  }
 }
