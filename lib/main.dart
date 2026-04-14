@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_background/flutter_background.dart';
 import 'screens/home_screen.dart';
 
-void main() {
-  _backgroundInitialize();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await _backgroundInitialize();
   runApp(const C25KApp());
 }
 
