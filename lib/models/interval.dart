@@ -1,3 +1,7 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
 class Interval {
   final String activityType; // "walk", "run", "warmup", "cooldown"
   final int durationMinutes;
@@ -5,8 +9,8 @@ class Interval {
 
   const Interval({
     required this.activityType,
-    this.durationMinutes = 0,
-    this.durationSeconds = 0,
+    required this.durationMinutes,
+    required this.durationSeconds,
   });
 
   int get totalSeconds => (durationMinutes * 60) + durationSeconds;
@@ -26,4 +30,45 @@ class Interval {
       'durationSeconds': durationSeconds,
     };
   }
+
+  Color getColorForActivityType() {
+    switch (this.activityType) {
+      case 'warmup':
+        return Colors.yellow;
+      case 'run':
+        return Colors.green;
+      case 'walk':
+        return Colors.blue;
+      case 'cooldown':
+        return Colors.purple;
+      default:
+        return Colors.grey;
+    }
+  }
+
+  String getActivityLabel() {
+    switch (this.activityType) {
+      case 'warmup':
+        return 'Warm Up';
+      case 'run':
+        return 'Run';
+      case 'walk':
+        return 'Walk';
+      case 'cooldown':
+        return 'Cool Down';
+      default:
+        return this.activityType;
+    }
+  }
+
+  String formatDuration() {
+    return '$durationMinutes:${durationSeconds.toString().padLeft(2, '0')}';
+  }
+
+  @override
+  String toString() {
+    return '${getActivityLabel()}, ${formatDuration()}';
+  }
 }
+
+enum ActivityType { warmup, run, walk, cooldown }

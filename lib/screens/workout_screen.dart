@@ -112,48 +112,16 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     _notificationService.notifyWorkoutComplete();
   }
 
-  Color _getColorForActivityType(String activityType) {
-    switch (activityType) {
-      case 'warmup':
-        return Colors.yellow;
-      case 'run':
-        return Colors.green;
-      case 'walk':
-        return Colors.blue;
-      case 'cooldown':
-        return Colors.purple;
-      default:
-        return Colors.grey;
-    }
-  }
-
   String _formatDuration(int seconds) {
     final int minutes = seconds ~/ 60;
     final int remainingSeconds = seconds % 60;
     return '$minutes:${remainingSeconds.toString().padLeft(2, '0')}';
   }
 
-  String _getActivityLabel(String activityType) {
-    switch (activityType) {
-      case 'warmup':
-        return 'Warm Up';
-      case 'run':
-        return 'Run';
-      case 'walk':
-        return 'Walk';
-      case 'cooldown':
-        return 'Cool Down';
-      default:
-        return activityType;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final currentInterval = intervals[currentIntervalIndex];
-    final activityColor = _getColorForActivityType(
-      currentInterval.activityType,
-    );
+    final activityColor = currentInterval.getColorForActivityType();
 
     return Scaffold(
       appBar: CustomAppBar(title: widget.workout.title),
@@ -179,7 +147,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
               ),
             ] else ...[
               Text(
-                _getActivityLabel(currentInterval.activityType),
+                currentInterval.getActivityLabel(),
                 style: Theme.of(
                   context,
                 ).textTheme.headlineMedium?.copyWith(color: activityColor),

@@ -1,3 +1,4 @@
+import 'package:c25k_app/screens/temp_selector_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_background/flutter_background.dart';
 import 'screens/home_screen.dart';
@@ -32,7 +33,7 @@ class C25KApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.dark,
       ),
-      home: const HomeScreen(),
+      home: TempSelectorPage(),
     );
   }
 }
