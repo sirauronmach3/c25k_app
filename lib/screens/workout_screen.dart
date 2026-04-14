@@ -1,9 +1,8 @@
-import 'dart:async';
-import 'package:c25k_app/services/notification_service.dart';
+import 'package:c25k_app/services/interval_service.dart';
 import 'package:c25k_app/widgets/custom_app_bar.dart';
+import 'package:c25k_app/widgets/custom_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:c25k_app/models/workout.dart';
-import 'package:c25k_app/models/interval.dart' as interval_model;
 import 'package:wakelock_plus/wakelock_plus.dart';
 import 'package:flutter_background/flutter_background.dart';
 
@@ -17,23 +16,15 @@ class WorkoutScreen extends StatefulWidget {
 }
 
 class _WorkoutScreenState extends State<WorkoutScreen> {
-  late List<interval_model.Interval> intervals;
-  late int currentIntervalIndex;
-  late int remainingSeconds;
-  late Timer? timer;
-  late bool backgroundExecutionEnabled;
-  bool isWorkoutActive = false;
-  bool isWorkoutCompleted = false;
-  final NotificationService _notificationService = NotificationService();
+  late final IntervalService _service;
+  bool backgroundExecutionEnabled = false;
 
   @override
   void initState() {
     super.initState();
     WakelockPlus.enable();
-    intervals = widget.workout.intervals;
-    currentIntervalIndex = 0;
-    remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
-    timer = null; // Don't initialize timer automatically
+    _service = IntervalService(intervals: widget.workout.intervals);
+    _service.addListener(() => setState(() {}));
     _enableBackgroundExecution();
   }
 
@@ -53,63 +44,10 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
 
   @override
   void dispose() {
-    timer?.cancel();
+    _service.dispose();
     WakelockPlus.disable();
     _disableBackgroundExecution();
     super.dispose();
-  }
-
-  void startWorkout() {
-    setState(() {
-      isWorkoutActive = true;
-    });
-
-    // Initialize timer when starting workout
-    timer = _initiateTimer();
-
-    // Announce first activity when starting workout
-    if (currentIntervalIndex == 0 &&
-        remainingSeconds == intervals[0].totalSeconds) {
-      _notificationService.notifyActivityChange(intervals[0].activityType);
-    }
-  }
-
-  void pauseWorkout() {
-    timer?.cancel();
-    setState(() {
-      isWorkoutActive = false;
-    });
-  }
-
-  void resetWorkout() {
-    timer?.cancel();
-    setState(() {
-      currentIntervalIndex = 0;
-      remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
-      isWorkoutActive = false;
-      isWorkoutCompleted = false;
-    });
-  }
-
-  void skipToNextInterval() {
-    if (currentIntervalIndex < intervals.length - 1) {
-      setState(() {
-        currentIntervalIndex++;
-        remainingSeconds = intervals[currentIntervalIndex].totalSeconds;
-        _notificationService.notifyActivityChange(
-          intervals[currentIntervalIndex].activityType,
-        );
-      });
-    }
-  }
-
-  void endWorkout() {
-    timer?.cancel();
-    setState(() {
-      isWorkoutActive = false;
-      isWorkoutCompleted = true;
-    });
-    _notificationService.notifyWorkoutComplete();
   }
 
   String _formatDuration(int seconds) {
@@ -120,7 +58,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final currentInterval = intervals[currentIntervalIndex];
+    final currentInterval = _service.currentInterval;
     final activityColor = currentInterval.getColorForActivityType();
 
     return Scaffold(
@@ -129,7 +67,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (isWorkoutCompleted) ...[
+            if (_service.isCompleted) ...[
               const Icon(
                 Icons.check_circle_outline,
                 size: 100,
@@ -142,7 +80,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
               ),
               const SizedBox(height: 32),
               ElevatedButton(
-                onPressed: resetWorkout,
+                onPressed: _service.reset,
                 child: const Text('Start Over'),
               ),
             ] else ...[
@@ -163,98 +101,47 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                 ),
                 child: Center(
                   child: Text(
-                    _formatDuration(remainingSeconds),
+                    _formatDuration(_service.remainingSeconds),
                     style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ),
               const SizedBox(height: 24),
               Text(
-                'Interval ${currentIntervalIndex + 1} of ${intervals.length}',
+                'Interval ${_service.currentIntervalIndex + 1} of ${_service.intervals.length}',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 48),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (!isWorkoutActive)
-                    ElevatedButton.icon(
-                      onPressed: startWorkout,
-                      icon: const Icon(Icons.play_arrow),
-                      label: Text(
-                        currentIntervalIndex == 0 &&
-                                remainingSeconds == intervals[0].totalSeconds
-                            ? 'Start Workout'
-                            : 'Resume',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 24,
-                          vertical: 12,
-                        ),
-                      ),
-                    )
-                  else
-                    ElevatedButton.icon(
-                      onPressed: pauseWorkout,
-                      icon: const Icon(Icons.pause),
-                      label: const Text(
-                        'Pause',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.orange,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 24,
-                          vertical: 12,
-                        ),
-                      ),
-                    ),
-                  const SizedBox(width: 16),
-                  ElevatedButton.icon(
-                    onPressed: resetWorkout,
-                    icon: const Icon(Icons.refresh),
-                    label: const Text(
-                      'Reset',
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 12,
-                      ),
-                    ),
+                  WorkoutPlayPauseButton(
+                    isActive: _service.isActive,
+                    isAtStart:
+                        _service.currentIntervalIndex == 0 &&
+                        _service.remainingSeconds ==
+                            _service.intervals[0].totalSeconds,
+                    onStart: _service.start,
+                    onPause: _service.pause,
                   ),
+                  const SizedBox(width: 16),
+                  WorkoutResetButton(onPressed: _service.reset),
                 ],
               ),
               const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton.icon(
+                  WorkoutSkipButton(
                     onPressed:
-                        currentIntervalIndex < intervals.length - 1
-                            ? skipToNextInterval
+                        _service.currentIntervalIndex <
+                                _service.intervals.length - 1
+                            ? _service.skip
                             : null,
-                    icon: const Icon(Icons.skip_next),
-                    label: const Text(
-                      'Skip Interval',
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 10,
-                      ),
-                    ),
                   ),
                   const SizedBox(width: 16),
                   ElevatedButton.icon(
-                    onPressed: endWorkout,
+                    onPressed: _service.end,
                     icon: const Icon(Icons.stop),
                     label: const Text(
                       'End Workout',
@@ -275,39 +162,5 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         ),
       ),
     );
-  }
-
-  Timer? _initiateTimer() {
-    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        if (remainingSeconds > 0) {
-          remainingSeconds--;
-
-          // Optional: Add countdown notifications
-          if (remainingSeconds == 3) {
-            _notificationService.notifyCountdown(3);
-          }
-        } else {
-          // Move to next interval
-          if (currentIntervalIndex < intervals.length - 1) {
-            currentIntervalIndex++;
-            final newInterval = intervals[currentIntervalIndex];
-            remainingSeconds = newInterval.totalSeconds;
-
-            // Notify user of specific activity change
-            _notificationService.notifyActivityChange(newInterval.activityType);
-          } else {
-            // Workout complete
-            timer.cancel();
-            isWorkoutActive = false;
-            isWorkoutCompleted = true;
-
-            // Notify user that workout is complete
-            _notificationService.notifyWorkoutComplete();
-          }
-        }
-      });
-    });
-    return timer;
   }
 }
