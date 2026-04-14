@@ -6,7 +6,7 @@ class TempSelectorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Temperature Selector')),
+      appBar: AppBar(title: Text('Select your run style'), centerTitle: true),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,7 +23,7 @@ class TempSelectorPage extends StatelessWidget {
               child: Text('Home Screen'),
             ),
             SizedBox(height: 20),
-            Text("Cadence setter", style: TextStyle(fontSize: 24)),
+            Text("Custom Cadence Setter", style: TextStyle(fontSize: 24)),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
